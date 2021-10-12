@@ -17,6 +17,3 @@ jobs:
           server: ftpupload.net
           username: epiz_30046706
           password: ${{secrets.FTP_PASSWORD}}
-          exclude:
-            - **/.git*
-            - **/.git*/**
