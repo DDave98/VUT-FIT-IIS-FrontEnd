@@ -12,8 +12,11 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@main
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        uses: airvzxf/ftp-deployment-action@latest
         with:
           server: ftpupload.net
-          username: epiz_30046706
+          user: epiz_30046706
           password: ${{secrets.FTP_PASSWORD}}
+          local_dir: "./htdocs"
+          remote_dir: "./htdocs"
+          delete: "false"
