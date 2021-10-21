@@ -1,0 +1,1 @@
+// tento skript vygeneruje footer pro danou stránku
