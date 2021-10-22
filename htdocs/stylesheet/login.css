@@ -191,6 +191,12 @@ a {
     text-align: center
 }
 
+.top {
+    position: absolute;
+    top:50px; 
+    left:50px;
+}
+
 .card {
     width: 500px;
     left: 100px
