@@ -1,12 +1,76 @@
 <!DOCTYPE html> <!-- nastaveni profilu, přehled uživatelových: konf/přednasek/rezervaci/žadosti, jejich editaci/smazani/přidání --> 
+
 <html lang="en"> <!-- admin : + přehled uživatelu, smazat -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
+
+
+
+<!-- tailwind -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.4/tailwind.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet">  
+    <link href="https://cdn.jsdelivr.net/npm/@tailwindcss/custom-forms@0.2.1/dist/custom-forms.css" rel="stylesheet"> <!-- Required form plugin -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" /> <!-- Required font awesome -->
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+
+    <!-- SCRIPT -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="./scripts/konference.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer ></script>
+    <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
 </head>
+
+
+
+
 <body>
-    
+    <!-- ---------------------------------------------------- PAGE HEADER ---------------------------------------------------- -->
+    <div class="flex flex-wrap w-full">
+        <div class="w-full">
+          <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-blueGray-500 rounded">
+
+            <!-- logo -->
+            <a href="http://iss2021.infinityfreeapp.com/">
+            <img src="./pictures/logo-clear.png" class="relative object-scale-down h-20 object-left inline mr-12">
+            </a>
+            <!-- page name -->
+            <h1 class="text-sm font-bold leading-relaxed inline mr-4 py-2 whitespace-nowrap object-left uppercase text-white" href="#pablo">
+              Konference
+            </h1>
+            
+            <!-- login -->
+            <ul class="flex flex-col lg:flex-row list-none ml-auto">
+              <li class="nav-item">
+                <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="./login.html">
+                  User-Profile
+                </a>
+              </li>
+
+              <!-- sing out -->
+              <li class="nav-item">
+                <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="./login.html">
+                  Odhlásit se
+                </a>
+              </li>
+            </ul>
+
+            <svg class=" w-10 text-white mx-10"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+
+          </nav>
+        </div>
+      </div>
+
+    <!-- ---------------------------------------------------- PROFILE ---------------------------------------------------- -->
+
+
+
 </body>
 </html>
