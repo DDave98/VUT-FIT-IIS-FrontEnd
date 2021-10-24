@@ -30,12 +30,19 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" /> <!-- Required font awesome -->
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
 
+    <link rel="stylesheet" href="konference.css">
+
     <!-- SCRIPT -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="./scripts/konference.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer ></script>
     <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+
+    <script src="konference.js"></script>   
+
+    <!-- shows a message if the script is not supported / unavailable =>  FAULT TOLERANCE -->
+    <noscript>You need to enable JavaScript to view the full site.</noscript>
 
 </head>
 
@@ -253,20 +260,22 @@
               
               
               <!-- Ramecek 1 -->
-              <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-                <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
+              
+                <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+                  <div class="p-5">
+                    <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+                      <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+                        <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                      </svg>
+                    </div>
+                    <p class="mb-2 font-bold">Football Sports</p>
+                    <p class="text-sm leading-5 text-gray-900">
+                      Sed ut perspiciatis unde omnis iste. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
                   </div>
-                  <p class="mb-2 font-bold">Football Sports</p>
-                  <p class="text-sm leading-5 text-gray-900">
-                    Sed ut perspiciatis unde omnis iste. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
+                  <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
                 </div>
-                <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-              </div>
+              
               
 
               <!-- Ramecek 2 -->
@@ -602,15 +611,10 @@
         });
       </script>
 
-      <script src="konference.js"></script>  
 
+    <!-- ------------------------------------------- Conference Modal Boxes (= popup window) ----------------------------------------------- -->    
+    <!-- NOT YET FUNCTIONAL -->
 
-      <!-- shows a message if the script is not supported / unavailable =>  FAULT TOLERANCE -->
-      <noscript>You need to enable JavaScript to view the full site.</noscript>
-
-
-
-    <!-- ------------------------------------------- Conference Modal Boxes (= popup window) ----------------------------------------------- -->      
 
 
 

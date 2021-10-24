@@ -1,3 +1,6 @@
+// STRICT MODE 
+'use strict';
+
 export const Content = () => {
   return (
     <div className="bg-gray-100">
@@ -247,9 +250,16 @@ export const Content = () => {
             </div>
             <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
           </div>
-          
+
         </div>
       </div>
     </div>
   );
 };
+
+
+
+
+// --------------------------------------------- Conference Modal Boxes (= popup window) -----------------------------------------------
+
+// NOT YET FUNCTIONAL
