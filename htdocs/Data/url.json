@@ -1,3 +1,16 @@
+
 {
-    "baseURL":"http://iis-proj.herokuapp.com/"
+    "baseURL":"http://iis-proj.herokuapp.com/",
+    
+    "user":
+        {
+            "email":"",
+            "name":"",
+            "lastName":"",
+            "pwd":""
+        }
+    
+
 }
+
+
