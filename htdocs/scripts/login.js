@@ -1,22 +1,24 @@
-// Handling submitions from form (w\ FormData API)     
-// = logging values upon 'sign up'
+// button click event
+document.getElementById("btn").onclick = function() {formData(event)};
+
+
+// Handling submitions from form (w\ FormData API):     
 function formData(event) 
 {
     // prevents a page refresh
     event.preventDefault();
   
-    const data = new FormData(event.target);
+    const data = new FormData(document.getElementById("formId"));
   
-    // passing 'entries' method output to 'Object.fromEntries', which returns a plain js object -> to use 'JSON.stringify'
+    // passing 'entries' method output to 'Object.fromEntries', which returns a plain js object -> to use 'JSON.stringify' later
     const usrdata = Object.fromEntries(data.entries());
 
 
-    // (for LOG IN) array in ' name="checkbox" '  containg all checked values (if there are any)
+    //(for LOG IN): array in ' name="checkbox" '  contains all checked values (if there are any: "on" or [none])
     usrdata.checkbox = data.getAll("checkbox");
 
 
-
-    // take data from form area (class selection)
+    // take data from form ("group" class selection)
     const jsonData = document.querySelector('.group');
 
     // converting values to JSON (= ready to be sent to a server)
@@ -24,12 +26,11 @@ function formData(event)
 
   }
   
-
+/*
   const reformData = document.querySelector(".login-space");
-  
   // on click call fn formData()
   reformData.addEventListener("submit", formData);
-
+*/
 
 
 
