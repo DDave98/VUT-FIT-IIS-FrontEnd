@@ -16,7 +16,7 @@ function formData(event)
 
 
     //(for LOG IN): array in ' name="checkbox" '  contains all checked values (if there are any: "on" or [none])
-    usrdata.checkbox = data.getAll("checkbox");
+    usrdata.keepSingnedIn= data.getAll("keepSingnedIn");
 
 
     // take data from form ("group" class selection)
@@ -44,17 +44,23 @@ function formData(event)
   
     const usrdataR = Object.fromEntries(data.entries());
 
+    //check email format (regex):
+    //TODO
+
+    //compare password strings:   
+    //NOTE: REMOVE password_check before making the json!!!
+    //TODO
+
+
+
+
     var jsonDataR = document.querySelector('.group2');               
 
     jsonDataR = JSON.stringify(usrdataR, null, 2);                   
 
 
 
-    //check email format (regex):
-    //TODO
 
-    //compare password strings:
-    //TODO
   }
   
 
