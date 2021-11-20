@@ -27,7 +27,7 @@ function formData(event)
 
 
     //check email format (regex):
-    //TODO
+    //TODO = call emailValidate(mail)
 
 
   }
@@ -45,10 +45,10 @@ function formData(event)
     const usrdataR = Object.fromEntries(data.entries());
 
     //check email format (regex):
-    //TODO
+    //TODO = call emailValidate(mail)
 
     //compare password strings:   
-    //NOTE: REMOVE password_check before making the json!!!
+    //NOTE: REMOVE password_check before making the json!!!:      "delete usrdataR.password_check;"
     //TODO
 
 
@@ -63,6 +63,42 @@ function formData(event)
 
   }
   
+
+  // ---------- Checking that the "required" fields are filled ---------- (call onclick()!!)
+  //todo (implement into html, check functionality + test)
+
+  /* 
+   function requiredField(input) 
+   {
+     // if the lenght of the (element;s) string is 0 = field is 'empty'
+     if (input.value.length == 0)
+      { 
+         alert("message");  	
+         return false; 
+      }  	
+      return true; 
+    } 
+  */
+
+
+
+
+
+  // ----------- Checking for valid email format -------------             (call from the other fns!!)
+  //todo (implement into json form functions above, check functionality + test)
+
+  /* 
+    function emailValidate(mail) 
+    {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value))
+        {
+          return (true)
+        }
+          alert("You have entered an invalid email address!")
+          return (false)
+    }
+  */
+
 
 
 
