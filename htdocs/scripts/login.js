@@ -1,7 +1,8 @@
 // button click event
-document.getElementById("btn").onclick = function() {formData(event)};
+document.getElementById("btn").onclick = function() {formData(event)};              // login
+document.getElementById("btn2").onclick = function() {formDataREG(event)};          // register
 
-
+// ----------------------------------------------------- for LOGIN ------------------------------------------------------------
 // Handling submitions from form (w\ FormData API):     
 function formData(event) 
 {
@@ -18,21 +19,49 @@ function formData(event)
     usrdata.checkbox = data.getAll("checkbox");
 
 
-                                                                   //CHANGES LOG ()
-
     // take data from form ("group" class selection)
-    var jsonData = document.querySelector('.group');               // previosly: const...
+    var jsonData = document.querySelector('.group');               
 
     // converting values to JSON (= ready to be sent to a server)
-    jsonData = JSON.stringify(usrdata, null, 2);                    // previously: jsonData.innerText....
+    jsonData = JSON.stringify(usrdata, null, 2);                    
+
+
+    //check email format (regex):
+    //TODO
+
+
+  }
+  
 
 
 
+  // ---------------------------------------------- for SIGN UP (= same princip as with login fn) ---------------------------------------
+  function formDataREG(event) 
+{
+    event.preventDefault();
+  
+    const data = new FormData(document.getElementById("formIdREG"));
+  
+    const usrdataR = Object.fromEntries(data.entries());
+
+    var jsonDataR = document.querySelector('.group2');               
+
+    jsonDataR = JSON.stringify(usrdataR, null, 2);                   
+
+
+
+    //check email format (regex):
+    //TODO
 
     //compare password strings:
     //TODO
   }
   
+
+
+
+
+// __________________________________________________________________________________________________________________________________________
 // send to server:
 //TODO
 

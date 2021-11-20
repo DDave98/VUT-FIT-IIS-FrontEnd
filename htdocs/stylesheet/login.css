@@ -37,13 +37,16 @@ body {
 
 .login-snip .sign-in,
 .login-snip .sign-up,
-.login-space .group .check {
+.login-space .group .check,
+.login-space .group2 .check {
     display: none;
 }
 
 .login-snip .tab,
 .login-space .group .label,
-.login-space .group .button {
+.login-space .group .button,
+.login-space .group2 .label,
+.login-space .group2 .button {
     text-transform: uppercase;
 }
 
@@ -58,7 +61,7 @@ body {
 
 .login-snip .sign-in:checked+.tab,
 .login-snip .sign-up:checked+.tab {
-    color: #fff;
+    color: rgb(255, 255, 255);
     border-color: #1161ee;
 }
 
@@ -69,41 +72,51 @@ body {
     transform-style: preserve-3d;
 }
 
-.login-space .group {
+.login-space .group,
+.login-space .group2 {
     margin-bottom: 15px;
 }
 
 .login-space .group .label,
 .login-space .group .input,
-.login-space .group .button {
+.login-space .group .button,
+.login-space .group2 .label,
+.login-space .group2 .input,
+.login-space .group2 .button {
     width: 100%;
     color: #fff;
     display: block;
 }
 
 .login-space .group .input,
-.login-space .group .button {
+.login-space .group .button,
+.login-space .group2 .input,
+.login-space .group2 .button {
     border: none;
     padding: 15px 20px;
     border-radius: 25px;
     background: rgba(255, 255, 255, .1);
 }
 
-.login-space .group input[data-type="password"] {
+.login-space .group input[data-type="password"],
+.login-space .group2 input[data-type="password"] {
     /*text-security: circle;*/
     -webkit-text-security: circle;
 }
 
-.login-space .group .label {
+.login-space .group .label,
+.login-space .group2 .label {
     color: #aaa;
     font-size: 12px;
 }
 
-.login-space .group .button {
+.login-space .group .button,
+.login-space .group2 .button {
     background: #1161ee;
 }
 
-.login-space .group label .icon {
+.login-space .group label .icon,
+.login-space .group2 label .icon {
     width: 15px;
     height: 15px;
     border-radius: 2px;
@@ -113,30 +126,34 @@ body {
 }
 
 .login-space .group label .icon:before,
-.login-space .group label .icon:after {
+.login-space .group label .icon:after,
+.login-space .group2 label .icon:before,
+.login-space .group2 label .icon:after {
     content: '';
     width: 10px;
     height: 2px;
-    background: #fff;
+    background: rgb(255, 255, 255);
     position: absolute;
     transition: all .2s ease-in-out 0s;
 }
 
-.login-space .group label .icon:before {
+.login-space .group label .icon:before,
+.login-space .group2 label .icon:before {
     left: 3px;
     width: 5px;
     bottom: 6px;
     transform: scale(0) rotate(0);
 }
 
-.login-space .group label .icon:after {
+.login-space .group label .icon:after,
+.login-space .group2 label .icon:after {
     top: 6px;
     right: 0;
     transform: scale(0) rotate(0);
 }
 
 .login-space .group .check:checked+label {
-    color: #fff;
+    color: rgb(255, 255, 255);
 }
 
 .login-space .group .check:checked+label .icon {
