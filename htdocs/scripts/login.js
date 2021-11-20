@@ -18,19 +18,23 @@ function formData(event)
     usrdata.checkbox = data.getAll("checkbox");
 
 
+                                                                   //CHANGES LOG ()
+
     // take data from form ("group" class selection)
-    const jsonData = document.querySelector('.group');
+    var jsonData = document.querySelector('.group');               // previosly: const...
 
     // converting values to JSON (= ready to be sent to a server)
-    jsonData.innerText = JSON.stringify(usrdata, null, 2);
+    jsonData = JSON.stringify(usrdata, null, 2);                    // previously: jsonData.innerText....
 
+
+
+
+    //compare password strings:
+    //TODO
   }
   
-/*
-  const reformData = document.querySelector(".login-space");
-  // on click call fn formData()
-  reformData.addEventListener("submit", formData);
-*/
+// send to server:
+//TODO
 
 
 
@@ -47,7 +51,7 @@ function formData(event)
 
 
 
-
+// receiveng requests:
 /*
 
 // Create a request variable and assign a new XMLHttpRequest object to it.
