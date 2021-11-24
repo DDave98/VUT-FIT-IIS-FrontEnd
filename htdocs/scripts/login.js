@@ -74,7 +74,7 @@ function requiredFieldREG()
 
 
 
-// ------------------------------------------------- Handling submitions from form (using FormData API) --------------------------------------------------------
+// ------------------------------------------------- Handling submitions from form (using FormData API) ---------------------------------------------------
 // For LOG IN:
 
 function formData(event)
@@ -88,20 +88,20 @@ function formData(event)
   const usrdata = Object.fromEntries(data.entries());
 
 
-  //array in ' name="checkbox" '  contains all checked values (if there are any: "on" or [none])
-  usrdata.keepSingnedIn = data.getAll("keepSingnedIn");
+
+  //check email format (if ok = proceed with turning into json):
+  if (emailValidate(usrdata.email))
+  {
+    //array in ' name="checkbox" '  contains all checked values (if there are any: "on" or [none])
+    usrdata.keepSingnedIn = data.getAll("keepSingnedIn");
 
 
-  // take data from form ("group" class selection)
-  var jsonData = document.querySelector('.group');
+    // take data from form ("group" class selection)
+    var jsonData = document.querySelector('.group');
 
-  // converting values to JSON (= ready to be sent to a server)
-  jsonData = JSON.stringify(usrdata, null, 2);
-
-
-  //check email format:
-  function emailValidate(mail);
-
+    // converting values to JSON (= ready to be sent to a server)
+    jsonData = JSON.stringify(usrdata, null, 2);
+  }
 }
 
 
@@ -113,52 +113,46 @@ function formDataREG(event)
   event.preventDefault();
 
   const data = new FormData(document.getElementById("formIdREG"));
-
   const usrdataR = Object.fromEntries(data.entries());
 
-  //check email format:
-  function emailValidate(mail);
+  //check email format (if ok = proceed with turning into json):
+  if (emailValidate(usrdataR.email))
+  {
+    if (String(usrdataR.password) === String(usrdataR.password_check)) 
+    {
+      //remove password_check before making the json
+      delete usrdataR.password_check;
 
+      var jsonDataR = document.querySelector('.group2');
 
+      jsonDataR = JSON.stringify(usrdataR, null, 2);
+    } 
 
-  //*
-
-
-  var jsonDataR = document.querySelector('.group2');
-
-  jsonDataR = JSON.stringify(usrdataR, null, 2);
-
-  //compare password strings:  
-  //( NOTE: REMOVE password_check before making the json!!!)
-  // - compare the 2 strings -> alert if wrong OR if ok "delete usrdataR.password_check;" -> again " jsonDataR = JSON.stringify(usrdataR, null, 2); "
-  //* - OR maybe (but not sure if it will work): 
-  //if (JSON.stringify(jsonDataR.password) === JSON.stringify(jsonDataR.password_check)) {} 
-  //else {alert("Passwords do not match!");}
-
-
-  //TODO
-
-
+    else 
+    {
+      alert("Passwords do not match!");
+    }
+  }
 }
 
 
 
 
 
-
-// --------------------------------------------------------- Checking for valid email format ---------------------------------------------------------------             
-  //(call from the other fns!!)
-  //todo ( check functionality + test)
-
-
+// --------------------------------------------------------- Checking for valid email format (using regex)------------------------------------------------------
 function emailValidate(mail)
 {
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value))
+  const format = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  if (format.test((String(mail))))
     {
       return (true)
     }
+  else
+    {
       alert("You have entered an invalid email address!")
       return (false)
+    }
 }
 
 
@@ -171,8 +165,7 @@ function emailValidate(mail)
 
 
 
-
-// __________________________________________________________________________________________________________________________________________
+// ______________________________________________________________________________________________________________________________________
 // sending JSON (request) to server:
 //TODO
 
