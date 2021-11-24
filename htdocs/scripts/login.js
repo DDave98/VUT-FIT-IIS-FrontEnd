@@ -92,8 +92,15 @@ function formData(event)
   //check email format (if ok = proceed with turning into json):
   if (emailValidate(usrdata.email))
   {
-    //array in ' name="checkbox" '  contains all checked values (if there are any: "on" or [none])
-    usrdata.keepSingnedIn = data.getAll("keepSingnedIn");
+    //array in ' name="checkbox" '  contains all checked values (if there are any: "on" or [none]) 
+    if (data.getAll("keepSingnedIn").length === 0)
+    {
+      usrdata.keepSingnedIn = false;
+    }
+    else
+    {
+      usrdata.keepSingnedIn = true;
+    }
 
 
     // take data from form ("group" class selection)
