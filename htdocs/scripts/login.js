@@ -108,6 +108,10 @@ function formData(event)
 
     // converting values to JSON (= ready to be sent to a server)
     jsonData = JSON.stringify(usrdata, null, 2);
+
+
+    // create and send a request:
+    req("https://iis-proj.herokuapp.com/api/Auth/singin", jsonData);
   }
 }
 
@@ -133,6 +137,10 @@ function formDataREG(event)
       var jsonDataR = document.querySelector('.group2');
 
       jsonDataR = JSON.stringify(usrdataR, null, 2);
+
+
+      // create and send a request:
+      req("https://iis-proj.herokuapp.com/api/Auth/singup", jsonDataR);
     } 
 
     else 
@@ -167,61 +175,63 @@ function emailValidate(mail)
 
 
 
-
-
-
-
-
-// ______________________________________________________________________________________________________________________________________
-// sending JSON (request) to server:
-//TODO
-
-
-
-
-
-// receiving JSON (answer) from server:
-// ( NOTE: must turn back to js object to be able to use the data)
-//TODO
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// receiveng requests:
-/*
-
-// Create a request variable and assign a new XMLHttpRequest object to it.
-var request = new XMLHttpRequest()
-
-// Open a new connection, using the POST request on the URL endpoint
-request.open('POST', 'http://iis-proj.herokuapp.com/', true)
-
-request.onload = function ()
+// ----------------------------------------------- Sending + receiving data (in JSON format) via POST method (using AJAX) -----------------------------------------------
+function req(url, jdata)
 {
-  // Begin accessing JSON data here
+  // Creating an XMLHttpRequest object (assigned to a var)
+  var request = new XMLHttpRequest();
 
-    var data = JSON.parse(this.response)
+
+  //-----
+
+  request.onreadystatechange = function () 
+  {
+    // the onreadystatechange event is triggered four times (1-4) -> skip to 4. = the request had been sent
+    if (request.readyState === 4) 
+    {
+      // HTTP 200 OK success status response code = the request has succeeded
+      if (request.status === 200) 
+      {
+        var resp = JSON.parse(this.response);
+
+        
+        // secondary check for SIGN UP response format
+        if (resp === false) 
+        {
+          alert("There was an ERROR! Please try again!");
+          return (false)
+        }
 
 
-    data.forEach(movie => {
-    // Log each movie's title
-    console.log(movie.title)
-    })
+        // turn json to js object to be able to use the data (save the response's body content to a var)
+        var resp = JSON.parse(this.response);
 
+        alert("Success! You may proceed.");
+
+        return resp; 
+      }
+
+      else
+      {
+        alert("There was an ERROR! Please try again!");
+        return (false)
+      }
+    }
+  }
+
+  //----------
+
+  // opening a new connection (using POST request) 
+  request.open("POST", url, true);
+
+  request.setRequestHeader("Content-Type", "application/json");
+  
+  // awnd request to server
+  request.send(jdata);
 }
 
-// Send request
-request.send()
 
-*/
+
+
+
+// -------------------------------------------------------------------------------------------------------------------------------------------
