@@ -65,14 +65,14 @@
             <ul class="flex flex-col lg:flex-row list-none ml-auto">
               <li class="nav-item">
                 <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="./login.html">
-                  Přihlásit se
+                  Log In
                 </a>
               </li>
 
               <!-- singin -->
               <li class="nav-item">
                 <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="./login.html">
-                  Registrovat se
+                  Sign up
                 </a>
               </li>
             </ul>
@@ -129,24 +129,24 @@
                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1">
                 <i class="fas fa-search"></i>
               </span>
-              <input type="text" placeholder="vyhledej podle názvu"
+              <input type="text" placeholder="Search by name"
                 class="px-2 py-1 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring w-full pl-10" />
             </div>
 
             <!-- seznam checkboxu - něco -->
             <div class="block ml-6">
-              <span class="antialiased xl">Dostupnost</span>
+              <span class="antialiased xl">Availability:</span>
               <div class="mt-2">
                 <div>
                   <label class="inline-flex items-center">
                     <input type="checkbox" class="form-checkbox" checked>
-                    <span class="ml-2">pouze dostupné</span>
+                    <span class="ml-2">Available only</span>
                   </label>
                 </div>
                 <div>
                   <label class="inline-flex items-center">
                     <input type="checkbox" class="form-checkbox">
-                    <span class="ml-2">pouze bezplatné</span>
+                    <span class="ml-2">Free only</span>
                   </label>
                 </div>
               </div>
@@ -155,49 +155,22 @@
 
             <!-- prez num input -->
             <div class="mt-6 pt-0 ml-6">
-              <span class="antialiased xl">Počet prezentací</span>
+              <span class="antialiased xl">Number of Presentations:</span>
               <!-- slider -->
               <div class="inline w-full mt-3 pr-16">
                 <input type="range" min="1" max="100" value="1" class="w-2/3 mt-3">
               </div>  
             </div>
 
-            <!-- prez num input -->
+            <!-- conf num slider -->
             <div class="mt-6 pt-0 ml-6">
-              <span class="antialiased xl">Doba trvání konference</span>
-              <!-- slider -->
-              <div class="inline w-full mt-3 pr-16">
-                <input type="range" min="1" max="10" value="1" class="w-2/3 mt-3">
-              </div>  
-            </div>
+              <span class="antialiased xl">Takes place between:</span>
 
-            <!-- free seat input -->
-            <div class="mt-6 pt-0 ml-6">
-              <span class="antialiased xl">Počet volných míst</span>
-
-              <!-- slider -->
-              <div class="inline w-full mt-3 pr-16">
-                <input type="range" min="1" max="100" value="1" class="w-2/3 mt-3">
-              </div>
-            </div>
-
-            <!-- conff enter price -->
-            <div class="mt-6 pt-0 ml-6">
-              <span class="antialiased xl">Vstupné</span>
-
-              <!-- slider -->
-              <div class="inline w-full mt-3 pr-16">
-                <input type="range" min="1" max="100" value="1" class="w-2/3 mt-3">
-              </div>
-            </div>
-
-            <!-- cong num slider -->
-            <div class="mt-6 pt-0 ml-6">
-              <span class="antialiased xl">Conference mezi daty</span>
 
               <!-- date picker -->
               <div date-rangepicker class="mt-3 w-4/5">
-                <span class="mx-4 text-gray-500">od</span>
+                <span class="mx-4 text-gray-500">From</span>
+
                 <!-- input od -->
                 <div class="relative mb-3">
                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -208,10 +181,9 @@
                     <input name="start" type="date" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" placeholder="Datum od">
                   </div>
 
-                
-
+      
                 <!-- input do -->
-                <span class="mx-4 text-gray-500">do</span>
+                <span class="mx-4 text-gray-500">To</span>
                 <div class="relative">
                   <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -223,9 +195,10 @@
               </div>
             </div>
 
+
             <!-- place input -->
             <div class="mt-6 pt-0 ml-6">
-              <span class="antialiased xl">Místo konání</span>
+              <span class="antialiased xl">Location:</span>
 
               <!-- place input -->
               <div date-rangepicker class="mt-3 w-4/5">
@@ -236,14 +209,14 @@
                           <circle cx="12" cy="10" r="3" />
                         </svg>
                     </div>
-                    <input name="start" type="date" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" placeholder="Datum od">
+                    <input name="start" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" placeholder="Location">
                   </div>
               </div>
             </div>
 
             <button type="button" class="inline-flex mt-8 w-full bg-green-500 text-white active:bg-purple-600 font-bold uppercase text-base px-8 py-3 rounded-full shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 text-center">
               <svg class="h-6 w-6 text-black"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" /></svg>
-              <span class="">Filtrovat</span>
+              <span class="">Filter</span>
             </button>
 
           </nav>
@@ -261,12 +234,7 @@
               <!-- Ramecek 1 -->
               
                 <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-                  <div class="p-5">
-                    <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                      <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                        <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                      </svg>
-                    </div>
+                  <div class="p-5"> 
                     <p class="mb-2 font-bold">Football Sports</p>
                     <p class="text-sm leading-5 text-gray-900">
                       Sed ut perspiciatis unde omnis iste. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -280,11 +248,6 @@
               <!-- Ramecek 2 -->
               <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                 <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
                   <p class="mb-2 font-bold">Bowling Sports</p>
                   <p class="text-sm leading-5 text-gray-900">
                     Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.
@@ -297,11 +260,6 @@
               <!-- Ramecek 3 -->
               <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                 <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
                   <p class="mb-2 font-bold">Cycling Sports</p>
                   <p class="text-sm leading-5 text-gray-900">
                     A slice of heaven. O for awesome, this chocka full cuzzie is as rip-off as a cracker.
@@ -314,11 +272,6 @@
               <!-- Ramecek 4 -->
               <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                 <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
                   <p class="mb-2 font-bold">Weight Lifting Sports</p>
                   <p class="text-sm leading-5 text-gray-900">
                     Meanwhile, in behind the bicycle shed, Hercules Morse, as big as a horse.
@@ -331,11 +284,6 @@
               <!-- Ramecek 5 -->
               <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                 <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
                   <p class="mb-2 font-bold">Golf Sports</p>
                   <p class="text-sm leading-5 text-gray-900">
                     Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.
@@ -348,11 +296,6 @@
               <!-- Ramecek 6 -->
               <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                 <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
                   <p class="mb-2 font-bold">Hockey Sports</p>
                   <p class="text-sm leading-5 text-gray-900">
                     A business big enough that it could be listed on the NASDAQ goes belly up.
@@ -365,11 +308,6 @@
               <!-- Ramecek 7 -->
               <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                 <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
                   <p class="mb-2 font-bold">Shooting Sports</p>
                   <p class="text-sm leading-5 text-gray-900">
                     Lookout flogging bilge rat main sheet bilge water nipper fluke to go on account heave down clap of thunder.
@@ -382,11 +320,6 @@
               <!-- Ramecek 8 -->
               <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                 <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
                   <p class="mb-2 font-bold">Martial Arts</p>
                   <p class="text-sm leading-5 text-gray-900">
                     Webtwo ipsum orkut reddit meebo skype vimeo jajah spock empressr zimbra, mobly napster.
@@ -396,14 +329,9 @@
               </div>
               
 
-              <!-- Ramecek 1 -->
+              <!-- Ramecek 9 -->
               <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                 <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
                   <p class="mb-2 font-bold">Football Sports</p>
                   <p class="text-sm leading-5 text-gray-900">
                     Sed ut perspiciatis unde omnis iste. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -413,14 +341,9 @@
               </div>
               
 
-              <!-- Ramecek 2 -->
+              <!-- Ramecek 10 -->
               <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                 <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
                   <p class="mb-2 font-bold">Bowling Sports</p>
                   <p class="text-sm leading-5 text-gray-900">
                     Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.
@@ -430,14 +353,9 @@
               </div>
               
 
-              <!-- Ramecek 3 -->
+              <!-- Ramecek 11 -->
               <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                 <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
                   <p class="mb-2 font-bold">Cycling Sports</p>
                   <p class="text-sm leading-5 text-gray-900">
                     A slice of heaven. O for awesome, this chocka full cuzzie is as rip-off as a cracker.
@@ -447,14 +365,9 @@
               </div>
               
 
-              <!-- Ramecek 4 -->
+              <!-- Ramecek 12 -->
               <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                 <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
                   <p class="mb-2 font-bold">Weight Lifting Sports</p>
                   <p class="text-sm leading-5 text-gray-900">
                     Meanwhile, in behind the bicycle shed, Hercules Morse, as big as a horse.
@@ -463,109 +376,6 @@
                 <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
               </div>
               
-
-              <!-- Ramecek 5 -->
-              <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-                <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
-                  <p class="mb-2 font-bold">Golf Sports</p>
-                  <p class="text-sm leading-5 text-gray-900">
-                    Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.
-                  </p>
-                </div>
-                <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-              </div>
-              
-
-              <!-- Ramecek 6 -->
-              <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-                <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
-                  <p class="mb-2 font-bold">Hockey Sports</p>
-                  <p class="text-sm leading-5 text-gray-900">
-                    A business big enough that it could be listed on the NASDAQ goes belly up.
-                  </p>
-                </div>
-                <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-              </div>
-              
-
-              <!-- Ramecek 7 -->
-              <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-                <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
-                  <p class="mb-2 font-bold">Shooting Sports</p>
-                  <p class="text-sm leading-5 text-gray-900">
-                    Lookout flogging bilge rat main sheet bilge water nipper fluke to go on account heave down clap of thunder.
-                  </p>
-                </div>
-                <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-              </div>
-              
-
-              <!-- Ramecek 8 -->
-              <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-                <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
-                  <p class="mb-2 font-bold">Martial Arts</p>
-                  <p class="text-sm leading-5 text-gray-900">
-                    Webtwo ipsum orkut reddit meebo skype vimeo jajah spock empressr zimbra, mobly napster.
-                  </p>
-                </div>
-                <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-              </div>
-              
-
-              <!-- Ramecek 1 -->
-              <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-                <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
-                  <p class="mb-2 font-bold">Football Sports</p>
-                  <p class="text-sm leading-5 text-gray-900">
-                    Sed ut perspiciatis unde omnis iste. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                </div>
-                <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-              </div>
-              
-
-              <!-- Ramecek 2 -->
-              <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-                <div class="p-5">
-                  <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                      <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                    </svg>
-                  </div>
-                  <p class="mb-2 font-bold">Bowling Sports</p>
-                  <p class="text-sm leading-5 text-gray-900">
-                    Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.
-                  </p>
-                </div>
-                <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-              </div>
-              
-
             <!-- konec ramecku -->
             </div>
           </div>
