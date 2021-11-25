@@ -1,5 +1,4 @@
-// STRICT MODE 
-'use strict';
+
 
 
 //TODO: if user = admin  ->  show "uzivatele" button (otherwise hide it)

@@ -1,5 +1,4 @@
-// STRICT MODE 
-'use strict';
+
 
 
 
