@@ -176,6 +176,10 @@ function emailValidate(mail)
 
 
 // ----------------------------------------------- Sending + receiving data (in JSON format) via POST method (using AJAX) -----------------------------------------------
+//global var 
+var resp;
+
+
 function req(url, jdata)
 {
   // Creating an XMLHttpRequest object (assigned to a var)
@@ -192,9 +196,9 @@ function req(url, jdata)
       // HTTP 200 OK success status response code = the request has succeeded
       if (request.status === 200) 
       {
-        var resp = JSON.parse(this.response);
+        // turn json to js object to be able to use the data (save the response's body content to a var)
+         resp = JSON.parse(this.response);
 
-        
         // secondary check for SIGN UP response format
         if (resp === false) 
         {
@@ -203,8 +207,20 @@ function req(url, jdata)
         }
 
 
-        // turn json to js object to be able to use the data (save the response's body content to a var)
-        var resp = JSON.parse(this.response);
+        /* Example response (= resp): 
+
+          {
+            "login": "fse@ged.hfyjht",
+            "lvl": "user",
+            "expire": "2021-11-26T22:45:25.9514028Z",
+            "accesstoken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImZzZUBnZWQuaGZ5amh0Iiwicm9sZSI6InVzZXIiLCJuYmYiOjE2Mzc5NTk1MjUsImV4cCI6MTYzNzk2NjcyNSwiaWF0IjoxNjM3OTU5NTI1fQ.fF3C6dx1IllskECRK-K6GJo2TvxOX2vBpGfn1ndJ-KI",
+            "refreshToken": null
+          } */ 
+          
+        // pass token:
+        loggedIn (resp.accesstoken);
+
+
 
         alert("Success! You may proceed.");
 

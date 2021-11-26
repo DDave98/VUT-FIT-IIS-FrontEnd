@@ -38,6 +38,11 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer ></script>
     <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
 
+      <!-- -->
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/general.js" async></script>
+      <!-- -->
+      
     <script src="./scripts/konference.js" async></script>
 
     <!-- shows a message if the script is not supported / unavailable =>  FAULT TOLERANCE -->
@@ -449,7 +454,8 @@
 
 
     <!-- ------------------------------------------- Conference Modal Boxes (= popup window) ----------------------------------------------- -->    
-    <!-- TODO: add conference info + registartion form -->
+    <!-- TODO: add conference info + registartion form functionality -->
+
 
     <!--NOTE: Trigger/Open The Modal box = using button IDs B1-B12-->
     <!-- The Modal -->
@@ -491,7 +497,7 @@
                 <br><br> <br> 
 
                 <div class="groupr"> 
-                  <button type="button" class="button" id="btn">RESERVE</button>
+                  <button type="button" class="button" id="btnn">RESERVE</button>
                 </div>
                 
                 <div class="hr"></div>
@@ -503,11 +509,26 @@
           
           <br>
       </div>
-      
-      
-    </div>
-    
 
+
+
+
+
+      <div class="res-space">
+
+        <h2>Conference Information:</h2>
+
+        <div id="inf-box" class="ibox">
+          <p id="Conf">[information]</p>
+        </div>
+
+      </div>
+      
+
+      
+
+    </div>
+  
 
 </body>
 </html>
