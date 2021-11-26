@@ -3,7 +3,7 @@
   }
 
 
-/* The Modal (background) */
+                                                                /* The Modal (background) */
 .modal 
 {
   display: none; /* Hidden by default */
@@ -44,3 +44,126 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+
+
+                                                                        /* Reservation Form */
+
+
+.res-space 
+{
+  min-height: 345px;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.res-space .groupr
+{
+    margin-bottom: 15px;
+}
+
+.res-space .groupr .label,
+.res-space .groupr .input
+{
+    width: 40%;
+    color: rgb(0, 0, 0);
+    display: block;
+}
+
+.res-space .groupr .button
+{
+    width: 40%;
+    color: rgb(224, 228, 235);
+    display: block;
+    
+}
+
+.res-space .groupr .input,
+.res-space .groupr .button
+{
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.829);
+}
+
+.res-space .groupr input[data-type="password"]
+{
+    /*text-security: circle;*/
+    -webkit-text-security: circle;
+}
+
+.res-space .groupr .label
+{
+    color: rgb(7, 14, 75);
+    font-size: 17px;
+}
+
+.res-space .groupr .button
+{
+    background: #1161ee;
+}
+
+.res-space .groupr label .icon
+{
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+    background: rgba(255, 255, 255, .1);
+}
+
+.res-space .groupr label .icon:before,
+.res-space .groupr label .icon:after
+{
+    content: '';
+    width: 10px;
+    height: 2px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    transition: all .2s ease-in-out 0s;
+}
+
+.res-space .groupr label .icon:before
+{
+    left: 3px;
+    width: 5px;
+    bottom: 6px;
+    transform: scale(0) rotate(0);
+}
+
+.res-space .groupr label .icon:after
+{
+    top: 6px;
+    right: 0;
+    transform: scale(0) rotate(0);
+}
+
+
+
+.res-space .groupr .check:checked+label {
+    color: rgb(255, 255, 255);
+}
+
+.res-space .groupr .check:checked+label .icon {
+    background: #1161ee;
+}
+
+.res-space .groupr .check:checked+label .icon:before {
+    transform: scale(1) rotate(45deg);
+}
+
+.res-space .groupr .check:checked+label .icon:after {
+    transform: scale(1) rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
