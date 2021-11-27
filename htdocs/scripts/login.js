@@ -224,8 +224,8 @@ function req(url, jdata)
 
         alert("Success! You may proceed.");
 
-        // redirect to Main page (simulating http redirect):
-        window.location.redirect = "http://iss2021.infinityfreeapp.com/";
+        // redirect to Main page (simulating user click):
+        window.location.href = "./htaccess/index.html";      //"http://iss2021.infinityfreeapp.com/";
 
       }
 
