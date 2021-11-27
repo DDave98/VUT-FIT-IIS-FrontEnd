@@ -225,7 +225,7 @@ function req(url, jdata)
         alert("Success! You may proceed.");
 
         // redirect to Main page (simulating http redirect):
-        window.location = "http://iss2021.infinityfreeapp.com/";
+        window.location.redirect = "http://iss2021.infinityfreeapp.com/";
 
       }
 
