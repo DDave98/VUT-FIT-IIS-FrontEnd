@@ -28,6 +28,7 @@
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
+
 /* The Close Button */
 .close 
 {
@@ -47,16 +48,54 @@
 
 
 
-                                                                        /* Reservation Form */
-.res-space 
+                                                                       /* Reservation Form */
+
+#textbox, #ibox 
+{
+  width: 52%;
+}
+
+#text, #Conf
+{
+  word-wrap: break-word;
+}
+
+
+.res-space, .conf-space 
 {
   min-height: 345px;
   position: relative;
   
+  
   perspective: 100px;
   transform-style: preserve-3d;
-  
 }
+
+.res-space .r
+{
+  width: 100%;
+  position: absolute;
+  right: 0;
+
+  display: inline-block;
+}
+
+.conf-space .left
+{
+  width: 100%;
+
+
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
+
 
 .res-space .groupr
 {

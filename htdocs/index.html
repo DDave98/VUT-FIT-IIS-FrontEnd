@@ -160,10 +160,12 @@
             <!-- prez num input -->
             <div class="mt-6 pt-0 ml-6">
               <span class="antialiased xl">Number of Presentations:</span>
+
               <!-- slider -->
               <div class="inline w-full mt-3 pr-16">
-                <input type="range" min="1" max="100" value="1" class="w-2/3 mt-3">
-              </div>  
+                <input type="range" min="1" max="100" value="1" class="w-2/3 mt-3" id="range"> 
+                <p> <span id="num"></span></p>               
+              </div>
             </div>
 
             <!-- conf num slider -->
@@ -438,7 +440,23 @@
 
 
 
+
+
       <script>
+        // slider counter:
+        var slider = document.getElementById("range");
+        var output = document.getElementById("num");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() 
+        {
+          output.innerHTML = this.value;
+        }
+      
+        // -------
+
+
+
         const btn = document.querySelector(".mobile-menu-button");
         const sidebar = document.querySelector(".sidebar");
 
@@ -447,8 +465,6 @@
           sidebar.classList.toggle("-translate-x-full");
         });
       </script>
-
-
 
 
 
@@ -465,69 +481,84 @@
         
         <span class="close" >&times;</span>
         <br>
-        <p style="position:relative; left:60%;"> NOTE: </p> 
-        <p style="position:relative; left:60%;"> If you would like to attend, please fill in the following <br>registration form</p> <br>      
+
 
         <!-- RESERVATION -->
           <div class="res-space">
 
-            <form id="formRES" name="form-res">
-              <div class="reservation">
+            <div class="r">
 
-                <div class="groupr">
-                  <label for="user" class="label">First Name:</label> <br>
-                  <input id="user" type="text" class="input" placeholder="Type in your name" name="jmeno" required>
+
+              <div id="textbox" style="position:relative; left:60%;">
+                        <p> NOTE: </p> 
+                        <p id="text"> If you would like to attend, please fill in the following <br>registration form</p> <br>      
+                      </div>
+
+
+              <form id="formRES" name="form-res">
+                <div class="reservation">
+
+                  <div class="groupr">
+                    <label for="user" class="label">First Name:</label> <br>
+                    <input id="user" type="text" class="input" placeholder="Type in your name" name="jmeno" required>
+                  </div>
+
+                  <br> <br> 
+
+                  <div class="groupr">
+                    <label for="user" class="label">Last Name:</label> <br>
+                    <input id="user" type="text" class="input" placeholder="Type in your surname" name="prijmeni" required>
+                  </div>
+
+                  <br> <br> 
+
+                  <div class="groupr">
+                    <label for="email" class="label">Email Address:</label> <br>
+                    <input id="email" type="email" class="input" placeholder="Enter your email address" name="login" required> 
+                  </div>
+                  
+                  <br><br> <br> 
+
+                  <div class="groupr"> 
+                    <button type="button" class="button" id="btnn">RESERVE</button>
+                  </div>
+                  
+                  <div class="hr"></div>
+                  
                 </div>
-
-                <br> <br> 
-
-                <div class="groupr">
-                  <label for="user" class="label">Last Name:</label> <br>
-                  <input id="user" type="text" class="input" placeholder="Type in your surname" name="prijmeni" required>
-                </div>
-
-                <br> <br> 
-
-                <div class="groupr">
-                  <label for="email" class="label">Email Address:</label> <br>
-                  <input id="email" type="email" class="input" placeholder="Enter your email address" name="login" required> 
-                </div>
-                
-                <br><br> <br> 
-
-                <div class="groupr"> 
-                  <button type="button" class="button" id="btnn">RESERVE</button>
-                </div>
-                
-                <div class="hr"></div>
-                
-              </div>
-            </form>
+              </form>
             
+            
+            </div>
+            
+            <br> <br>
           </div>
-          
-          <br>
-      </div>
 
 
 
 
+          <!-- Conference info -->
+          <div class="conf-space">
 
-      <div class="res-space">
 
-        <h2>Conference Information:</h2>
+            <div class="left">
 
-        <div id="inf-box" class="ibox">
-          <p id="Conf">[information]</p>
-        </div>
+              <h2>Conference Information:</h2>
 
-      </div>
+              <div id="inf-box" class="ibox">
+                <p id="Conf">[information]</p>
+              </div>
+
+            </div>
+
+
+          </div>
       
 
       
 
+      </div>
     </div>
   
-
 </body>
 </html>

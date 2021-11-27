@@ -10,13 +10,15 @@ document.getElementById("btn2").onclick = function () { requiredFieldREG() };   
 function requiredField() 
 {
   var empty = document.forms["form-login"]["email"].value;
-  if (empty == "") {
+  if (empty == "") 
+  {
     alert("Please fill in all fields!");
     return false;
   }
 
   empty = document.forms["form-login"]["password"].value;
-  if (empty == "") {
+  if (empty == "") 
+  {
     alert("Please fill in all fields!");
     return false;
   }
@@ -34,32 +36,37 @@ function requiredField()
 function requiredFieldREG() 
 {
   var empty = document.forms["form-reg"]["email"].value;
-  if (empty == "") {
+  if (empty == "") 
+  {
     alert("Please fill in all fields!");
     return false;
   }
 
   empty = document.forms["form-reg"]["username"].value;
-  if (empty == "") {
+  if (empty == "") 
+  {
     alert("Please fill in all fields!");
     return false;
   }
 
   empty = document.forms["form-reg"]["familyname"].value;
-  if (empty == "") {
+  if (empty == "") 
+  {
     alert("Please fill in all fields!");
     return false;
   }
 
   empty = document.forms["form-reg"]["password"].value;
-  if (empty == "") {
+  if (empty == "") 
+  {
     alert("Please fill in all fields!");
     return false;
   }
 
   //-----
   empty = document.forms["form-reg"]["password_check"].value;
-  if (empty == "") {
+  if (empty == "") 
+  {
     alert("Please fill in all fields!");
     return false;
   }
@@ -113,6 +120,11 @@ function formData(event)
     // create and send a request:
     req("https://iis-proj.herokuapp.com/api/Auth/singin", jsonData);
   }
+
+  else 
+    {
+      alert("Passwords do not match!");
+    }
 }
 
 

@@ -20,6 +20,16 @@ document.getElementById("btnn").onclick = function () { requiredField_S() };
 
 
 
+// -------------------------------------------------- Page Load - Filter ------------------------------------------------------
+// TODO
+
+
+
+
+
+// -------------------------------------------------- Slider Counter ------------------------------------------------------
+// = in index.html (due to connection issues)
+
 // --------------------------------------------- Conference Modal Boxes (= popup window) -----------------------------------------------
 function popup () 
 {
@@ -56,19 +66,22 @@ function popup ()
 function requiredField_S() 
 {
   empty = document.forms["form-res"]["jmeno"].value;
-  if (empty == "") {
+  if (empty == "") 
+  {
     alert("Please fill in all fields!");
     return false;
   }
 
   empty = document.forms["form-res"]["prijmeni"].value;
-  if (empty == "") {
+  if (empty == "") 
+  {
     alert("Please fill in all fields!");
     return false;
   }
 
   var empty = document.forms["form-res"]["login"].value;
-  if (empty == "") {
+  if (empty == "") 
+  {
     alert("Please fill in all fields!");
     return false;
   }
@@ -79,12 +92,29 @@ function requiredField_S()
   return true;
 }
 
+// --------------------------------------------------------- Checking for valid email format (using regex)------------------------------------------------------
+function emailValidate(mail)
+{
+  const format = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  if (format.test((String(mail))))
+    {
+      return (true)
+    }
+  else
+    {
+      alert("You have entered an invalid email address!")
+      return (false)
+    }
+}
+
+
 
 
 // ------------------------------------------------- Handling submitions from form (using FormData API) ---------------------------------------------------
 function formData_S(event) 
 {
-  /*
+  
   event.preventDefault();
 
   const data = new FormData(document.getElementById("formRES"));
@@ -97,15 +127,15 @@ function formData_S(event)
     var userS = document.querySelector('.groupr');    
     
     // getting conference id = cid
-    // TODO: get and add 'cid' (conference id), TEST : 
+    // TODO: get and add 'cid' (conference id), TEST!!! : 
     var cidS  ;
     
     // making the final object
-    var jsonDataS = 
+    const jsonDataS = 
     {
-      cid = cidS,
-      pocet = 1,
-      user = userS 
+      cid: cidS,
+      pocet: 1,
+      user: userS 
     };
     
 
@@ -115,12 +145,62 @@ function formData_S(event)
 
     // create and send a request:
     reqS("https://iis-proj.herokuapp.com/api/guest/addNewRezervation", jsonDataS);
-
-    
   }
+
+  else 
+  {
+    alert("Passwords do not match!");
+  }
+
   
-  */
 }
 
+// ----------------------------------------------- Sending + receiving data (in JSON format) -----------------------------------------------
+// TODO: not tested!
 
-// TODO: reqS() using GET
+reqS(url, data) 
+{  
+  var requestS = new XMLHttpRequest();
+  
+  
+
+  //-----
+
+  request.onreadystatechange = function () 
+  {
+    if (request.readyState === 4) 
+    {
+      if (request.status === 200) 
+      {
+
+
+        // turn json to js object to be able to use the data (save the response's body content to a var)
+         var respS = JSON.parse(this.response);
+
+       
+        alert("Your reservation was successful.");
+
+        return respS;
+      }
+
+      else
+      {
+        alert("There was an ERROR! Please try again!");
+        return (false)
+      }
+    }
+  }
+
+  //----------
+
+
+
+
+
+  // opening a new connection (using PUT request) 
+  request.open("PUT", url, true);
+  request.setRequestHeader("Content-Type", "application/json");
+  
+  request.send(jdata);
+  
+}
