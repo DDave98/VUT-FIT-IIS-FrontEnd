@@ -1,4 +1,5 @@
 // resp = global var (from login.js) containing response after login
+var resp;
 
 /* Example response (= resp): 
 

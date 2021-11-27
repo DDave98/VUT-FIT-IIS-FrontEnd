@@ -84,6 +84,7 @@ function requiredField_S()
 // ------------------------------------------------- Handling submitions from form (using FormData API) ---------------------------------------------------
 function formData_S(event) 
 {
+  /*
   event.preventDefault();
 
   const data = new FormData(document.getElementById("formRES"));
@@ -114,7 +115,11 @@ function formData_S(event)
 
     // create and send a request:
     reqS("https://iis-proj.herokuapp.com/api/guest/addNewRezervation", jsonDataS);
+
+    
   }
+  
+  */
 }
 
 

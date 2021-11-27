@@ -176,8 +176,7 @@ function emailValidate(mail)
 
 
 // ----------------------------------------------- Sending + receiving data (in JSON format) via POST method (using AJAX) -----------------------------------------------
-//global var 
-var resp;
+
 
 
 function req(url, jdata)
