@@ -226,8 +226,8 @@ function req(url, jdata)
 
         // redirect to Main page (simulating user click):
         //window.location.replace = "http://iss2021.infinityfreeapp.com/";
-        document.location.href = 'htdocs\index.html';
-        // window.history.back()
+        
+        window.history.back();
 
 
       }
