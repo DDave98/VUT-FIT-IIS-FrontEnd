@@ -29,10 +29,10 @@ function setCookie()
 
   //                 name=      value                    ; expires=            ; path=          
 
-  document.cookie = "login" + JSON.stringify(resp.login) + expiration + ";path=/; secure; domain=." + domainName; 
-  document.cookie = "lvl" + JSON.stringify(resp.lvl) + expiration + ";path=/; secure; domain=." + domainName; 
-  document.cookie = "expire" + JSON.stringify(resp.expire) + expiration + ";path=/; secure; domain=." + domainName; 
-  document.cookie = "accesstoken" + JSON.stringify(resp.accesstoken) + expiration + ";path=/; secure; domain=." + domainName; 
+  document.cookie = "login" + JSON.stringify(resp.login) + expiration + ";path=/; domain=." + domainName; 
+  document.cookie = "lvl" + JSON.stringify(resp.lvl) + expiration + ";path=/; domain=." + domainName; 
+  document.cookie = "expire" + JSON.stringify(resp.expire) + expiration + ";path=/; domain=." + domainName; 
+  document.cookie = "accesstoken" + JSON.stringify(resp.accesstoken) + expiration + ";path=/; domain=." + domainName; 
 }
 
 
