@@ -13,9 +13,6 @@ var resp;
           
 
 
-// for Log Out:
-document.getElementById("log_in").onclick = function () { logOUT() };  
-
 
 
 // -------------------------------------------------- store resp in cookies ---------------------------------------------------------

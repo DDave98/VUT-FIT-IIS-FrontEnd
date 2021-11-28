@@ -16,7 +16,10 @@ document.getElementById("B11").onclick = function () { document.getElementById("
 document.getElementById("B12").onclick = function () { document.getElementById("myModal").style.display = "block"; popup () };        
  
 // Reservation button:
-document.getElementById("btnn").onclick = function () { requiredField_S() };              
+document.getElementById("btnn").onclick = function () { requiredField_S() };   
+
+// for Log Out:
+document.getElementById("log_in").onclick = function () { logOUT() };  
 
 
 

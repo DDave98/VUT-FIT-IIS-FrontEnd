@@ -19,6 +19,11 @@ if (getCookie("lvl") !== "admin")
 
 
 
+// for Log Out:
+document.getElementById("log_in").onclick = function () { logOUT() };  
+
+
+
 
 
 
