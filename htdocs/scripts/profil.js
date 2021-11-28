@@ -1,9 +1,20 @@
 // check token (cannot access profile without any kind of user rights):
-if (loggedIn (resp.accesstoken) === false)
+if (typeof resp !== 'undefined' && resp !== null)
+{
+    if (loggedIn (resp.accesstoken) === false)
+    {
+        alert("ERR: Invalid access token!")
+        window.location.replace = "http://iss2021.infinityfreeapp.com/";
+    }
+}
+
+else
 {
     alert("ERR: Invalid access token!")
     window.location.replace = "http://iss2021.infinityfreeapp.com/";
 }
+
+
 
 
 // if user is NOT an admin = hide user management button
