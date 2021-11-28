@@ -171,7 +171,7 @@ function formData_S(event)
 // ----------------------------------------------- Sending + receiving data (in JSON format) -----------------------------------------------
 // TODO: not tested!
 
-reqS(url, data) 
+function reqS(url, data) 
 {  
   var requestS = new XMLHttpRequest();
   
