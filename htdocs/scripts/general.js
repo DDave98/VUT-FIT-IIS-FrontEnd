@@ -16,13 +16,18 @@ var resp;
 
 function loggedIn (access_token)
 {
-  // checking if resp object is empty or null = no accesstoken AND checking that the token given matches the one of the user
-    if(resp !== null && Object.keys(resp).length !== 0 && access_token === resp.accesstoken) // valid token
-    {
-        return true;
-    }
+  if(resp !== null) // no object has been created yet
+  {
+    // checking if resp object is empty = no accesstoken AND checking that the token given matches the one of the user
+      if(Object.keys(resp).length !== 0 && access_token === resp.accesstoken) // valid token
+      {
+          return true;
+      }
 
-    return false;
+      return false;
+  }
+
+  return false;
 }
 
 
