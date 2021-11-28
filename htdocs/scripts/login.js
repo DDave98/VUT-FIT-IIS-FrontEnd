@@ -188,8 +188,8 @@ function emailValidate(mail)
 
 
 // ----------------------------------------------- Sending + receiving data (in JSON format) via POST method (using AJAX) -----------------------------------------------
-
-
+// resp = global var (from login.js) containing response after login
+var resp;
 
 function req(url, jdata)
 {
