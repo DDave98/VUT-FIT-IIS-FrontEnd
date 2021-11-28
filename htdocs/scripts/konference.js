@@ -211,9 +211,9 @@ function reqS(url, data)
 
 
   // opening a new connection (using PUT request) 
-  request.open("PUT", url, true);
-  request.setRequestHeader("Content-Type", "application/json");
+  requestS.open("PUT", url, true);
+  requestS.setRequestHeader("Content-Type", "application/json");
   
-  request.send(jdata);
+  requestS.send(jdata);
   
 }
