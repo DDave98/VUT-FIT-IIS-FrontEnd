@@ -1,7 +1,7 @@
 // check token (cannot access profile without any kind of user rights):
 if (typeof resp !== 'undefined' && resp !== null)
 {
-    if (loggedIn (resp.accesstoken) === false)
+    if (loggedIn() === false)
     {
         alert("ERR: Invalid access token!")
         window.location.replace = "http://iss2021.infinityfreeapp.com/";

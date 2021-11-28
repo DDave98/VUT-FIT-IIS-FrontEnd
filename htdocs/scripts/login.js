@@ -227,10 +227,9 @@ function req(url, jdata)
             "refreshToken": null
           } */ 
           
-        // pass / check token:
-        loggedIn (resp.accesstoken);
 
-
+        // set cookies (using resp values):
+        setCookie(); 
 
         alert("Success! You may proceed.");
 

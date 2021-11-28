@@ -11,49 +11,96 @@ var resp;
             "refreshToken": null
           } */
           
-// -------------------------------------- check if user is logged in (based on valid token) --------------------------------------------------
-// TODO: make fn, ADD THIS SCRIPT TO ALL HTML FILES, test
-
-function loggedIn (access_token)
+// -------------------------------------------------- store resp in cookies ---------------------------------------------------------
+// SET cookies:
+// TODO: store token in cookies, TEST
+function setCookie() 
 {
-  if(typeof resp !== 'undefined' && resp !== null) // no object has been created yet
-  {
-    // checking if resp object is empty = no accesstoken AND checking that the token given matches the one of the user
-      if(Object.keys(resp).length !== 0 && access_token === resp.accesstoken) // valid token
-      {
-          return true;
-      }
+  var domainName = window.location.hostname;
 
-      return false;
-  }
+  var date = new Date(resp.expire); 
 
-  return false;
+  // convert into UTC format (for the cookies)
+  var expiration =  Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
+  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+
+
+  //                 name=      value                    ; expires=            ; path=          
+
+  document.cookie = "login" + JSON.stringify(resp.login) + expiration + ";path=/; secure; domain=." + domainName; 
+  document.cookie = "lvl" + JSON.stringify(resp.lvl) + expiration + ";path=/; secure; domain=." + domainName; 
+  document.cookie = "expire" + JSON.stringify(resp.expire) + expiration + ";path=/; secure; domain=." + domainName; 
+  document.cookie = "accesstoken" + JSON.stringify(resp.accesstoken) + expiration + ";path=/; secure; domain=." + domainName; 
 }
 
 
-// TODO: store token in cookies?
-// TODO: make DELETE token fn,  test
 
 
-//----------------------------------------------- if user is logged in - change header options ----------------------------------------------
-//TODO
-function header(t_f)
-{  
-  if (typeof resp !== 'undefined' && resp !== null)
+
+
+
+// GET cookies:
+function getCookie(attr) 
+{
+  // attr can be: "login"    "lvl"    "expire"     "accesstoken" (token)
+  var name = attr + "=";
+
+  // cookies are stored as: c1 = v1; c2 = v2; ...   => get to the needed attribute 
+  var decodeC = decodeURIComponent(document.cookie);
+  var co = decodeC.split(';');
+
+
+  for(let i = 0; i < co.length; i++) 
   {
-    // user/admin (LOG OUT + MY PROFILE)
-    if (loggedIn (resp.accesstoken) === true)
-      {
-      
-        document.getElementById("log_in").textContent = " LOG OUT";
-        document.getElementById("sign_up").textContent = "MY PROFILE";
-      }
+    var c = co[i];
+
+    while (c.charAt(0) == ' ') 
+    {
+      c = c.substring(1);
     }
 
-
-  // guest (LOG IN + SIGN UP) = no change
+    if (c.indexOf(name) == 0)
+     {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }
 
+
+
+
+
+// -------------------------------------- check if user is logged in (based on valid token) + change header --------------------------------------------------
+// TODO: test
+
+function loggedIn()
+{
+  var user = getCookie("accesstoken");
+
+  if(typeof user !== 'undefined' && user !== null) 
+    {
+      if(user !== "")
+      {
+        // user/admin (LOG OUT + MY PROFILE)
+        document.getElementById("log_in").textContent = " LOG OUT";
+        document.getElementById("sign_up").textContent = "MY PROFILE";
+
+        return true;
+      }
+
+      // guest (LOG IN + SIGN UP) = no change
+      document.getElementById("log_in").textContent = " LOG IN";
+      document.getElementById("sign_up").textContent = "SIGN UP";
+
+      return false;
+    }
+    
+    // has not been created yet = not logged in 
+    document.getElementById("log_in").textContent = " LOG IN";
+    document.getElementById("sign_up").textContent = "SIGN UP";
+    return false;
+}
 
 
 
