@@ -38,20 +38,20 @@ function loggedIn (access_token)
 //----------------------------------------------- if user is logged in - change header options ----------------------------------------------
 //TODO
 function header(t_f)
-{ 
-  // -> using "toggle" apply dark-theme class styles  instead of the light-theme ones
-  //document.body.classList.toggle('dark-theme')   
-
-  // user/admin (LOG OUT + MY PROFILE)
-  if (loggedIn (resp.accesstoken) === true)
-    {
-    
-      document.getElementById("log_in").textContent = " LOG OUT";
-      document.getElementById("sign_up").textContent = "MY PROFILE";
+{  
+  if (typeof resp !== 'undefined' && resp !== null)
+  {
+    // user/admin (LOG OUT + MY PROFILE)
+    if (loggedIn (resp.accesstoken) === true)
+      {
+      
+        document.getElementById("log_in").textContent = " LOG OUT";
+        document.getElementById("sign_up").textContent = "MY PROFILE";
+      }
     }
 
+
   // guest (LOG IN + SIGN UP) = no change
-    
 }
 
 
