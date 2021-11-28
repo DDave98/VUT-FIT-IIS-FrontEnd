@@ -13,6 +13,11 @@ var resp;
           
 
 
+// for Log Out:
+document.getElementById("log_in").onclick = function () { logOUT() };  
+
+
+
 // -------------------------------------------------- store resp in cookies ---------------------------------------------------------
 // SET cookies:
 function setCookie() 
@@ -84,7 +89,7 @@ function loggedIn()
       if(user !== "")
       {
         // user/admin (LOG OUT + MY PROFILE)
-        document.getElementById("log_in").textContent = " LOG OUT";
+        document.getElementById("log_in").textContent = "LOG OUT";
 
         document.getElementById("sign_up").textContent = "MY PROFILE";
         document.getElementById("sign_up").href="./profil.html"; 
@@ -93,7 +98,7 @@ function loggedIn()
       }
 
       // guest (LOG IN + SIGN UP) = no change
-      document.getElementById("log_in").textContent = " LOG IN";
+      document.getElementById("log_in").textContent = "LOG IN";
 
       document.getElementById("sign_up").textContent = "SIGN UP";
       document.getElementById("sign_up").href="./login.html";
@@ -102,11 +107,11 @@ function loggedIn()
     }
     
     // has not been created yet = not logged in 
-    document.getElementById("log_in").textContent = " LOG IN";
+    document.getElementById("log_in").textContent = "LOG IN";
 
     document.getElementById("sign_up").textContent = "SIGN UP";
     document.getElementById("sign_up").href="./login.html";
-    
+
     return false;
 }
 
@@ -115,7 +120,22 @@ function loggedIn()
 
 
 // --------------------------------------------------------- Log out -------------------------------------------------------------
-//TODO
+function logOUT() 
+{
+  // check current <a> writing
+  var text = document.getElementById("log_in").textContent;
+  if(text !== "LOG OUT")
+  {
+    return false;
+  }
+  
+  // if "LOG OUT" then proceed (detele cookies = setting the parameter to a past date):
+  var domainName = window.location.hostname;
+
+  document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
+}
+
+
 
 
 
