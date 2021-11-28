@@ -21,7 +21,7 @@ document.getElementById("btnn").onclick = function () { requiredField_S() };
 
 
 // --------------------------------------- change header based on if there is a valid token:
-header(loggedIn (resp.accesstoken));
+header(loggedIn (resp));
 
 // -------------------------------------------------- Page Load - Filter ------------------------------------------------------
 // TODO
