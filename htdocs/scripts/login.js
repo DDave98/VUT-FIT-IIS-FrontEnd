@@ -235,10 +235,7 @@ function req(url, jdata)
         alert("Success! You may proceed.");
 
         // redirect to Main page (simulating user click):
-        //window.location.replace = "http://iss2021.infinityfreeapp.com/";
-        
-        window.history.back();
-
+        window.location.replace = "http://iss2021.infinityfreeapp.com/";
 
       }
 
