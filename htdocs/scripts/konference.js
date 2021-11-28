@@ -179,11 +179,11 @@ function reqS(url, data)
 
   //-----
 
-  request.onreadystatechange = function () 
+  requestS.onreadystatechange = function () 
   {
-    if (request.readyState === 4) 
+    if (requestS.readyState === 4) 
     {
-      if (request.status === 200) 
+      if (requestS.status === 200) 
       {
 
 

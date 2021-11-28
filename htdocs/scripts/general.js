@@ -18,11 +18,13 @@ function setCookie()
 {
   var domainName = window.location.hostname;
 
-  var date = new Date(resp.expire); 
+// convert into UTC format (for the cookies):
 
-  // convert into UTC format (for the cookies)
-  var expiration =  Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
-  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+  //var date = new Date(resp.expire); 
+  //var expiration =  Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+  
+  var expiration = new Date(resp.expire).toUTCString(); 
+
 
 
   //                 name=      value                    ; expires=            ; path=          
