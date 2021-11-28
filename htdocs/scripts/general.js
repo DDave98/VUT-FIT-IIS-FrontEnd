@@ -16,7 +16,7 @@ var resp;
 
 function loggedIn (access_token)
 {
-  if(resp !== null) // no object has been created yet
+  if(typeof resp !== 'undefined' && resp !== null) // no object has been created yet
   {
     // checking if resp object is empty = no accesstoken AND checking that the token given matches the one of the user
       if(Object.keys(resp).length !== 0 && access_token === resp.accesstoken) // valid token
