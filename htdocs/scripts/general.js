@@ -129,7 +129,10 @@ function logOUT()
   // if "LOG OUT" then proceed (detele cookies = setting the parameter to a past date):
   var domainName = window.location.hostname;
 
-  document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
+  document.cookie = "login=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
+  document.cookie = "lvl=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
+  document.cookie = "expire=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
+  document.cookie = "accesstoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
 }
 
 
