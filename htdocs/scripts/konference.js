@@ -217,6 +217,6 @@ function reqS(url, data)
   requestS.open("PUT", url, true);
   requestS.setRequestHeader("Content-Type", "application/json");
   
-  requestS.send(jdata);
+  requestS.send(data);
   
 }

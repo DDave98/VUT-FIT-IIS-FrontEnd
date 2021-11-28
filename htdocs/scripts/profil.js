@@ -21,12 +21,50 @@ if (getCookie("lvl") !== "admin")
 
 // for Log Out:
 document.getElementById("log_in").onclick = function () { logOUT() };  
+//________________________________________________________________________________________________________________________________________
 
 
 
 
 
 
-//TODO: page scroll OR loading next/pev page content
 
-//TODO: individual button functions
+
+
+
+
+
+//TODO: individual button functions:
+
+//------------------------------------------------------------------ Admin ------------------------------------------------------------------
+// User management button:
+
+
+// List all existing Users  // page default =1
+// TODO: add panel / table with rows 
+
+// Set User rights  = uses login + rights type
+
+// Delete ANY User =uses logins
+
+
+
+//------------------------------------------------------------------ User ------------------------------------------------------------------
+// Delete (self) user = user needs to confirm pwd
+//TODO: add button OR <a> 
+
+// List user presentations 
+// Edit presentation
+
+
+
+
+
+// List user conferences
+// Edit conferences
+
+
+
+
+// List user reservations
+// Edit reservation
