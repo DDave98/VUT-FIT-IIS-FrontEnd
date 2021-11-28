@@ -11,9 +11,10 @@ var resp;
             "refreshToken": null
           } */
           
+
+
 // -------------------------------------------------- store resp in cookies ---------------------------------------------------------
 // SET cookies:
-// TODO: store token in cookies, TEST
 function setCookie() 
 {
   var domainName = window.location.hostname;
@@ -73,9 +74,7 @@ function getCookie(attr)
 
 
 
-// -------------------------------------- check if user is logged in (based on valid token) + change header --------------------------------------------------
-// TODO: test
-
+// -------------------------------------- check if user is logged in (based on valid token) + change header --------------------------------------------
 function loggedIn()
 {
   var user = getCookie("accesstoken");
@@ -86,21 +85,28 @@ function loggedIn()
       {
         // user/admin (LOG OUT + MY PROFILE)
         document.getElementById("log_in").textContent = " LOG OUT";
+
         document.getElementById("sign_up").textContent = "MY PROFILE";
+        document.getElementById("sign_up").href="./profil.html"; 
 
         return true;
       }
 
       // guest (LOG IN + SIGN UP) = no change
       document.getElementById("log_in").textContent = " LOG IN";
+
       document.getElementById("sign_up").textContent = "SIGN UP";
+      document.getElementById("sign_up").href="./login.html";
 
       return false;
     }
     
     // has not been created yet = not logged in 
     document.getElementById("log_in").textContent = " LOG IN";
+
     document.getElementById("sign_up").textContent = "SIGN UP";
+    document.getElementById("sign_up").href="./login.html";
+    
     return false;
 }
 
@@ -108,6 +114,8 @@ function loggedIn()
 
 
 
+// --------------------------------------------------------- Log out -------------------------------------------------------------
+//TODO
 
 
 
