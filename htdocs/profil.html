@@ -86,14 +86,14 @@
     <div class = "profile-buttons">
 
       <div class="admin">
-        <button class="button button2"><b>Users</b></button>
+        <button class="button button2" id="usersBTN"><b>Users</b></button>
       </div>
 
     <!-- ------------------------------------------- Standart User Profile ----------------------------------------------- -->
       <div class="user">    
-        <button class="button button1"><b>My reservations</b></button>
-        <button class="button button1"><b>My Presentations</b></button>
-        <button class="button button1"><b>My Conferences</b></button>
+        <button class="button button1" id="myRES"><b>My reservations</b></button>
+        <button class="button button1" id="myPRES"><b>My Presentations</b></button>
+        <button class="button button1" id="myCONF"><b>My Conferences</b></button>
       </div>
 
     </div>
@@ -109,7 +109,7 @@
     <!-- TODO: load pages dynamically -->
 
     <!-- ---------------------------------------------------- Pages --------------------------------------------------- -->
-    <div class="flex items-center justify-center mb-4 mt-12">
+    <div class="flex items-center justify-center mb-4 mt-12 fixed inset-x-0 bottom-0">
       <button type="button" class="text-purple-500 bg-transparent border-l border-t border-b border-purple-500 hover:bg-purple-500 hover:text-white active:bg-purple-600 font-bold uppercase text-xs px-4 py-2 rounded-l outline-none focus:outline-none mb-1 ease-linear transition-all duration-150">
         <i class="fas fa-angle-left"></i>
       </button>

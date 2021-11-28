@@ -228,7 +228,7 @@ function req(url, jdata)
             "refreshToken": null
           } */ 
           
-        // pass token:
+        // pass / check token:
         loggedIn (resp.accesstoken);
 
 

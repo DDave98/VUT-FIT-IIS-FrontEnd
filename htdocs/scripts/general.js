@@ -11,22 +11,51 @@ var resp;
             "refreshToken": null
           } */
           
-// -------------------------------------------
-
-// check if user is logged in (based on valid token)
+// -------------------------------------- check if user is logged in (based on valid token) --------------------------------------------------
 // TODO: make fn, ADD THIS SCRIPT TO ALL HTML FILES, test
+
 function loggedIn (access_token)
 {
-    if(access_token === resp.accesstoken) // valid token
+  // checking if resp object is empty = no accesstoken AND checking that the token given matches the one of the user
+    if(Object.keys(resp).length !== 0 && access_token === resp.accesstoken) // valid token
     {
-        // ...
         return true;
     }
 
-    alert("ERR: Invalid access token!")
     return false;
 }
 
 
-
+// TODO: store token in cookies?
 // TODO: make DELETE token fn,  test
+
+
+//----------------------------------------------- if user is logged in - change header options ----------------------------------------------
+//TODO
+function header(t_f)
+{ 
+  // -> using "toggle" apply dark-theme class styles  instead of the light-theme ones
+  //document.body.classList.toggle('dark-theme')   
+
+  // user/admin (LOG OUT + MY PROFILE)
+  if (loggedIn (resp.accesstoken) === true)
+    {
+    
+      document.getElementById("log_in").textContent = " LOG OUT";
+      document.getElementById("sign_up").textContent = "MY PROFILE";
+    }
+
+  // guest (LOG IN + SIGN UP) = no change
+    
+}
+
+
+
+
+
+
+
+
+
+// ----------------------------------------------- pagination (for main and profile) ----------------------------------------------
+//TODO: 

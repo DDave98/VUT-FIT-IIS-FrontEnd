@@ -20,6 +20,9 @@ document.getElementById("btnn").onclick = function () { requiredField_S() };
 
 
 
+// --------------------------------------- change header based on if there is a valid token:
+header(loggedIn (resp.accesstoken));
+
 // -------------------------------------------------- Page Load - Filter ------------------------------------------------------
 // TODO
 
@@ -27,8 +30,17 @@ document.getElementById("btnn").onclick = function () { requiredField_S() };
 
 
 
+
+
+
+
 // -------------------------------------------------- Slider Counter ------------------------------------------------------
 // = in index.html (due to connection issues)
+
+
+
+
+
 
 // --------------------------------------------- Conference Modal Boxes (= popup window) -----------------------------------------------
 function popup () 
