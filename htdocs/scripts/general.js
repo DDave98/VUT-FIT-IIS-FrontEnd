@@ -77,7 +77,7 @@ function getCookie(attr)
     //
   
     let cookie = {};
-    document.cookie.split(';').forEach(
+    document.cookie.split('; ').forEach(
         function(el) 
         {
             let [key,value] = el.split('=');
@@ -85,7 +85,7 @@ function getCookie(attr)
 
             if(key === attr)
             {
-              return cookie[attr];
+              return cookie[key.trim()];
             }
         }
    
