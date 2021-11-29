@@ -33,7 +33,7 @@ function setCookie()
   document.cookie = "accesstoken=" + JSON.stringify(resp.accesstoken) + expiration + ";path=/; domain=." + domainName; 
 
   // for admin TEST= pretent user has admin rights:
-  document.cookie = "lvl=admin;" + expiration + ";path=/; domain=." + domainName; 
+  //document.cookie = "lvl=admin;" + expiration + ";path=/; domain=." + domainName; 
 }
 
 

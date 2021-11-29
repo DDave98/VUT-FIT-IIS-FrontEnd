@@ -57,7 +57,7 @@ document.getElementById("self_delete").onclick = function () { selfDEL() };
 
 function selfDEL()
 {
-    //
+    // delete cookies:
 }
 
 
