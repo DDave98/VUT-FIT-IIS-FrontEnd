@@ -11,7 +11,7 @@ if (loggedIn() === false)
 
 // if user is NOT an admin = hide user management button
 //TODO: if user = admin  ->  show "uzivatele" button (otherwise hide it)
-if (getCookie("lvl") != "admin")
+if (getCookie("lvl") != '"admin"')
 {
     document.getElementById("usersBTN").style.visibility = 'hidden';
 }
