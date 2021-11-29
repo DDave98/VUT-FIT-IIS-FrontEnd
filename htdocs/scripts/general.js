@@ -131,6 +131,8 @@ function logOUT()
   document.cookie = "lvl=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
   document.cookie = "expire=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
   document.cookie = "accesstoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
+
+  window.location = "http://iss2021.infinityfreeapp.com/";
 }
 
 

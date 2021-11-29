@@ -56,8 +56,31 @@ document.getElementById("log_in").onclick = function () { logOUT() };
 document.getElementById("self_delete").onclick = function () { selfDEL() };  
 
 function selfDEL()
-{
+{ /*
+    // pronpt box (user input):
+    var heslo = prompt("Please confirm your current password", "Account Password");
+
+    if (heslo == null || heslo == "") 
+    {
+        alert("ERR: You must confirm the correct account password first!")
+    } 
+     
+
+    // DELETE request:
+    // if not 200 = wrong pwd for this user (400)
+
+
+
+
     // delete cookies:
+    var domainName = window.location.hostname;
+
+    document.cookie = "login=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
+    document.cookie = "lvl=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
+    document.cookie = "expire=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
+    document.cookie = "accesstoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
+    
+    */
 }
 
 
