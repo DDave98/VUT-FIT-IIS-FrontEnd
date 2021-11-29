@@ -19,7 +19,8 @@ var resp;
 // SET cookies:
 function setCookie() 
 {
-  var domainName = window.location.hostname;
+  
+  //var domainName = window.location.hostname;
 
 // convert into UTC / GMT format (for the cookies):
   var expiration = new Date(resp.expire).toUTCString(); 
@@ -31,6 +32,7 @@ function setCookie()
   document.cookie = "lvl=" + JSON.stringify(resp.lvl) + ";expires=" + expiration + ";path=/"; 
   document.cookie = "expire=" + JSON.stringify(resp.expire) + ";expires=" + expiration + ";path=/"; 
   document.cookie = "accesstoken=" + JSON.stringify(resp.accesstoken) + ";expires=" + expiration + ";path=/"; 
+  
 }
 
 
@@ -45,7 +47,7 @@ function getCookie(attr)
   // attr can be: "login"    "lvl"    "expire"     "accesstoken" (token)
   //--------
 
-
+/*
   
   var name = attr + "=";
 
@@ -69,10 +71,10 @@ function getCookie(attr)
     }
   }
   return "";
-  
+  */
   // ---------------------
     
-  /*
+  
     let cookie = {};
     document.cookie.split('; ').forEach(
         function(el) 
@@ -88,7 +90,7 @@ function getCookie(attr)
         }
         
     )
-*/
+
     
     
 }
