@@ -70,7 +70,7 @@ function getCookie(attr)
     if (c.indexOf(name) == 0)
      {
        // value = string from x to y positions (eg c contains "name=value" from=4 (0=n...= =4), to = 10)
-       alert(c.substring(name.length, c.length));
+       //alert(c.substring(name.length, c.length));
       return c.substring(name.length, c.length);
     }
   }
