@@ -82,10 +82,16 @@ function getCookie(attr)
         {
             let [key,value] = el.split('=');
             cookie[key.trim()] = value;
+
+            if(key === attr)
+            {
+              return cookie[attr];
+            }
         }
+   
     )
 
-    return cookie[attr];
+    
     
 }
 
