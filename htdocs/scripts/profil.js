@@ -48,15 +48,17 @@ document.getElementById("log_in").onclick = function () { logOUT() };
 
 
 
-//------------------------------------------------------------------ User ------------------------------------------------------------------
-// Delete (self) user = user needs to confirm pwd
-//TODO: test <a> 
+//--------------------------------------------------------------- User + Admin ------------------------------------------------------------
+// Delete (self) user = user needs to confirm pwd:
+//TODO: test 
 
 // for Delete Account:
 document.getElementById("self_delete").onclick = function () { selfDEL() };  
 
+
+
 function selfDEL()
-{ /*
+{ 
     // pronpt box (user input):
     var heslo = prompt("Please confirm your current password", "Account Password");
 
@@ -68,7 +70,34 @@ function selfDEL()
 
     // DELETE request:
     // if not 200 = wrong pwd for this user (400)
+    var requestD = new XMLHttpRequest();
 
+
+    requestD.onreadystatechange = function () 
+    {
+        if (requestD.readyState === 4) 
+        {
+            if (requestD.status === 200) 
+            {
+                alert("Your account has been removed successfully.");
+
+                return true;
+            }
+
+            else
+            {
+                alert("There was an ERROR! Please try again!");
+                return (false)
+            }
+        }
+    }
+
+    //----------
+    // opening a new connection (using DELETE request) 
+    requestD.open("DELETE", url, true);
+    requestD.setRequestHeader("Content-Type", "application/json");
+    
+    requestD.send(heslo);
 
 
 
@@ -80,23 +109,25 @@ function selfDEL()
     document.cookie = "expire=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
     document.cookie = "accesstoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
     
-    */
 }
 
 
-
+//---------------------------------------------------------------------------------------------------------------------------------------
+//TODO:
 // List user presentations 
 // Edit presentation
 
 
 
 
-
+//---------------------------------------------------------------------------------------------------------------------------------------
+//TODO:
 // List user conferences
 // Edit conferences
 
 
 
-
+//---------------------------------------------------------------------------------------------------------------------------------------
+//TODO:
 // List user reservations
 // Edit reservation
