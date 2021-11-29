@@ -16,6 +16,8 @@
   
   .sdel 
   {
+    position: relative;
+    text-align: center;
     font-size: 13px;
     color: rgba(240, 14, 14, 0.384);
   }
