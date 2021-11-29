@@ -46,6 +46,10 @@ function setCookie()
 function getCookie(attr) 
 {
   // attr can be: "login"    "lvl"    "expire"     "accesstoken" (token)
+  //--------
+
+
+  /*
   var name = attr + "=";
 
   // cookies are stored as: c1 = v1; c2 = v2; ...   => get to the needed attribute 
@@ -68,6 +72,21 @@ function getCookie(attr)
     }
   }
   return "";
+  */
+  // ---------------------
+    //
+  
+    let cookie = {};
+    document.cookie.split(';').forEach(
+        function(el) 
+        {
+            let [key,value] = el.split('=');
+            cookie[key.trim()] = value;
+        }
+    )
+
+    return cookie[attr];
+    
 }
 
 

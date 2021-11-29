@@ -13,51 +13,7 @@ if (loggedIn() === false)
 //TODO: if user = admin  ->  show "uzivatele" button (otherwise hide it)
 if (getCookie("lvl") !== "admin")
 {
-    // doublecheck from server side (due to sudden unknown bug):
-    //TODO: 
-    var request = new XMLHttpRequest();
-
-
-    request.onreadystatechange = function () 
-    {
-        if (request.readyState === 4) 
-        {
-            if (request.status === 200) 
-            {
-                var rights = JSON.parse(this.response);
-                
-                // check again the user's opravneni
-                if (rights.opravneni !== "admin")
-                {
-                    document.getElementById("usersBTN").style.visibility = 'hidden';
-                }
-
-
-
-                return rights;
-            }
-
-            else
-            {
-                alert("There was an ERROR! Please try again!");
-                return false;
-            }
-        }
-    }
-
-    //----------
-    // GET request:
-    request.open("GET", "https://iis-proj.herokuapp.com/api/user/getUserInfo", true);
-    
-    request.send();
-
-
-
-
-
-
-    //document.getElementById("usersBTN").style.visibility = 'hidden';
-    
+    document.getElementById("usersBTN").style.visibility = 'hidden';
 }
 
 
