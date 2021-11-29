@@ -91,7 +91,7 @@ document.getElementById("usersBTN").onclick = function () {  };
 document.getElementById("self_delete").onclick = function () { selfDEL() };  
 
 
-/*
+
 function selfDEL()
 { 
     // pronpt box (user input):
@@ -146,7 +146,7 @@ function selfDEL()
     
 }
 
-*/
+
 
 
 
