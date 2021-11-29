@@ -62,7 +62,7 @@ function selfDEL()
     // pronpt box (user input):
     var heslo = prompt("Please confirm your current password", "Account Password");
 
-    if (heslo == null || heslo == "") 
+    if (heslo === null || heslo === "") 
     {
         alert("ERR: You must confirm the correct account password first!")
     } 
@@ -86,7 +86,7 @@ function selfDEL()
 
             else
             {
-                alert("There was an ERROR! Please try again!");
+                alert("ERR: Incorrect password!");
                 return (false)
             }
         }
