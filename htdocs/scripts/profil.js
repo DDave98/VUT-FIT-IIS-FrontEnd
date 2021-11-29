@@ -94,7 +94,7 @@ function selfDEL()
 
     //----------
     // opening a new connection (using DELETE request) 
-    requestD.open("DELETE", url, true);
+    requestD.open("DELETE", "https://iis-proj.herokuapp.com/api/user/deleteAccount", true);
     requestD.setRequestHeader("Content-Type", "application/json");
     
     requestD.send(heslo);
