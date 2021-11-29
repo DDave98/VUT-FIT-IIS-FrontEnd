@@ -37,14 +37,49 @@ document.getElementById("log_in").onclick = function () { logOUT() };
 //TODO: individual button functions:
 
 //------------------------------------------------------------------ Admin ------------------------------------------------------------------
-// User management button:
+// List all existing Users  // page default = 1 :
 
-// List all existing Users  // page default =1
+// User management button:
+document.getElementById("usersBTN").onclick = function () {  };  
+
+
+
+
 // TODO: add panel / table with rows 
 
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------
+//TODO:
 // Set User rights  = uses login + rights type
 
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------
+//TODO:
 // Delete ANY User =uses logins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -87,7 +122,7 @@ function selfDEL()
             else
             {
                 alert("ERR: Incorrect password!");
-                return (false)
+                return false;
             }
         }
     }
@@ -100,7 +135,7 @@ function selfDEL()
     requestD.send(heslo);
 
 
-
+/*
     // delete cookies:
     var domainName = window.location.hostname;
 
@@ -109,25 +144,113 @@ function selfDEL()
     document.cookie = "expire=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
     document.cookie = "accesstoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
     
+    */
 }
+
+
+
+
 
 
 //---------------------------------------------------------------------------------------------------------------------------------------
 //TODO:
 // List user presentations 
+document.getElementById("myPRES").onclick = function () {  };  
+
+// ...
+
+
+
+
+
+//TODO: 
 // Edit presentation
 
 
 
 
+
+
+
+
+
+
 //---------------------------------------------------------------------------------------------------------------------------------------
-//TODO:
+//TODO: + pridat moznost zakladani conferenci pro uzivatele
 // List user conferences
+document.getElementById("myCONF").onclick = function () {  };  
+
+// ...
+
+
+
+
+
+
+
+
+// TODO:
 // Edit conferences
 
 
 
+
+
+
+
+
+
 //---------------------------------------------------------------------------------------------------------------------------------------
-//TODO:
+//TODO: test
 // List user reservations
+document.getElementById("myRES").onclick = function () { usr_RES() };  
+
+// ...
+
+function usr_RES()
+{ 
+    var requestRES = new XMLHttpRequest();
+
+
+    requestRES.onreadystatechange = function () 
+    {
+        if (requestRES.readyState === 4) 
+        {
+            if (requestRES.status === 200) 
+            {
+                // TODO: get and list the reservations
+                var respS = JSON.parse(this.response);
+
+                return respS;
+            }
+
+            else
+            {
+                alert("There was an ERROR! Please try again!");
+                return false;
+            }
+        }
+    }
+
+    //----------
+    // GET request:
+    requestRES.open("GET", "https://iis-proj.herokuapp.com/api/user/showMyRezervations", true);
+    requestRES.setRequestHeader("Content-Type", "application/json");
+    
+    requestRES.send();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//TODO:
 // Edit reservation
