@@ -69,8 +69,10 @@ function getCookie(attr)
     // if the attribute is found:
     if (c.indexOf(name) == 0)
      {
-       // value = string from x to y positions (eg c contains "name=value" from=4 (0=n...= =4), to = 10)
-       //alert(c.substring(name.length, c.length));
+      /*value = string from x to y positions 
+      (eg c contains "name=value" from=4 (0=n...= =4), to = 10 
+      => "value" (inclued quotes causing double quotes upon return 
+      => adjust compared stringby using double quotes: eg '"variable"')*/
       return c.substring(name.length, c.length);
     }
   }
