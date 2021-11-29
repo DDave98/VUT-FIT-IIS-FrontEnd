@@ -56,7 +56,7 @@
               Konference
             </h1>
             
-            <!-- log in / log out -->
+            <!-- = "log out" (text is changed in practise if logged in) -->
             <ul class="flex flex-col lg:flex-row list-none ml-auto">
               <li class="nav-item">
                 <a id="log_in" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="./login.html">
@@ -64,10 +64,11 @@
                 </a>
               </li>
 
-              <!-- sign up / profile -->
+              <!-- = "my profile" (NOTE: delete account = hidden if user is not logged in) -->
               <li class="nav-item">
                 <a id="sign_up" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="./login.html">
                   Sign up
+                    <a id="self_delete">Delete Account</a>
                 </a>
               </li> 
             </ul>

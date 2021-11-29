@@ -39,7 +39,6 @@ document.getElementById("log_in").onclick = function () { logOUT() };
 //------------------------------------------------------------------ Admin ------------------------------------------------------------------
 // User management button:
 
-
 // List all existing Users  // page default =1
 // TODO: add panel / table with rows 
 
@@ -51,7 +50,17 @@ document.getElementById("log_in").onclick = function () { logOUT() };
 
 //------------------------------------------------------------------ User ------------------------------------------------------------------
 // Delete (self) user = user needs to confirm pwd
-//TODO: add button OR <a> 
+//TODO: test <a> 
+
+// for Delete Account:
+document.getElementById("self_delete").onclick = function () { selfDEL() };  
+
+function selfDEL()
+{
+    //
+}
+
+
 
 // List user presentations 
 // Edit presentation
