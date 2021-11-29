@@ -21,13 +21,8 @@ function setCookie()
 {
   var domainName = window.location.hostname;
 
-// convert into UTC format (for the cookies):
-
-  //var date = new Date(resp.expire); 
-  //var expiration =  Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
-  
+// convert into UTC / GMT format (for the cookies):
   var expiration = new Date(resp.expire).toUTCString(); 
-
 
 
   //                 name=      value                    ; expires=            ; path=          
@@ -36,6 +31,9 @@ function setCookie()
   document.cookie = "lvl=" + JSON.stringify(resp.lvl) + expiration + ";path=/; domain=." + domainName; 
   document.cookie = "expire=" + JSON.stringify(resp.expire) + expiration + ";path=/; domain=." + domainName; 
   document.cookie = "accesstoken=" + JSON.stringify(resp.accesstoken) + expiration + ";path=/; domain=." + domainName; 
+
+  // for admin TEST= pretent user has admin rights:
+  document.cookie = "lvl=admin;" + expiration + ";path=/; domain=." + domainName; 
 }
 
 
