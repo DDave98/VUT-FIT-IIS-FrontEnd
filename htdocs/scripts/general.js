@@ -31,9 +31,6 @@ function setCookie()
   document.cookie = "lvl=" + JSON.stringify(resp.lvl) + expiration + ";path=/; domain=." + domainName; 
   document.cookie = "expire=" + JSON.stringify(resp.expire) + expiration + ";path=/; domain=." + domainName; 
   document.cookie = "accesstoken=" + JSON.stringify(resp.accesstoken) + expiration + ";path=/; domain=." + domainName; 
-
-  // for admin TEST= pretent user has admin rights:
-  //document.cookie = "lvl=admin;" + expiration + ";path=/; domain=." + domainName; 
 }
 
 
@@ -49,7 +46,7 @@ function getCookie(attr)
   //--------
 
 
-  /*
+  
   var name = attr + "=";
 
   // cookies are stored as: c1 = v1; c2 = v2; ...   => get to the needed attribute 
@@ -72,10 +69,10 @@ function getCookie(attr)
     }
   }
   return "";
-  */
-  // ---------------------
-    //
   
+  // ---------------------
+    
+  /*
     let cookie = {};
     document.cookie.split('; ').forEach(
         function(el) 
@@ -85,12 +82,13 @@ function getCookie(attr)
 
             if(key === attr)
             {
-              return cookie[key.trim()];
+    
+              return cookie[attr];
             }
         }
-   
+        
     )
-
+*/
     
     
 }
