@@ -13,7 +13,51 @@ if (loggedIn() === false)
 //TODO: if user = admin  ->  show "uzivatele" button (otherwise hide it)
 if (getCookie("lvl") !== "admin")
 {
-    document.getElementById("usersBTN").style.visibility = 'hidden';
+    // doublecheck from server side (due to sudden unknown bug):
+    //TODO: 
+    var request = new XMLHttpRequest();
+
+
+    request.onreadystatechange = function () 
+    {
+        if (request.readyState === 4) 
+        {
+            if (request.status === 200) 
+            {
+                var rights = JSON.parse(this.response);
+                
+                // check again the user's opravneni
+                if (rights.opravneni !== "admin")
+                {
+                    document.getElementById("usersBTN").style.visibility = 'hidden';
+                }
+
+
+
+                return rights;
+            }
+
+            else
+            {
+                alert("There was an ERROR! Please try again!");
+                return false;
+            }
+        }
+    }
+
+    //----------
+    // GET request:
+    request.open("GET", "https://iis-proj.herokuapp.com/api/user/getUserInfo", true);
+    
+    request.send();
+
+
+
+
+
+
+    //document.getElementById("usersBTN").style.visibility = 'hidden';
+    
 }
 
 
@@ -135,7 +179,7 @@ function selfDEL()
     requestD.send(heslo);
 
 
-/*
+
     // delete cookies:
     var domainName = window.location.hostname;
 
@@ -144,7 +188,6 @@ function selfDEL()
     document.cookie = "expire=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
     document.cookie = "accesstoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + domainName; 
     
-    */
 }
 
 
