@@ -1,19 +1,4 @@
-
-// ----------------------------------------------- button click event:
-
-//Get the button that opens the modal:
-document.getElementById("B1").onclick = function () { document.getElementById("myModal").style.display = "block"; popup () };     
-document.getElementById("B2").onclick = function () { document.getElementById("myModal").style.display = "block"; popup () };     
-document.getElementById("B3").onclick = function () { document.getElementById("myModal").style.display = "block"; popup () };     
-document.getElementById("B4").onclick = function () { document.getElementById("myModal").style.display = "block"; popup () };     
-document.getElementById("B5").onclick = function () { document.getElementById("myModal").style.display = "block"; popup () };     
-document.getElementById("B6").onclick = function () { document.getElementById("myModal").style.display = "block"; popup () };     
-document.getElementById("B7").onclick = function () { document.getElementById("myModal").style.display = "block"; popup () };     
-document.getElementById("B8").onclick = function () { document.getElementById("myModal").style.display = "block"; popup () };     
-document.getElementById("B9").onclick = function () { document.getElementById("myModal").style.display = "block"; popup () };     
-document.getElementById("B10").onclick = function () { document.getElementById("myModal").style.display = "block"; popup () };     
-document.getElementById("B11").onclick = function () { document.getElementById("myModal").style.display = "block"; popup () };     
-document.getElementById("B12").onclick = function () { document.getElementById("myModal").style.display = "block"; popup () };        
+// ----------------------------------------------- button click event:             
  
 // Reservation button:
 document.getElementById("btnn").onclick = function () { requiredField_S() };   
@@ -28,22 +13,158 @@ loggedIn();
 
 
 // -------------------------------------------------- Page Load - Filter ------------------------------------------------------
-// TODO
 
+const baseURL = "https://iis-proj.herokuapp.com";
+const elementSearch = document.getElementById("SearchFilter");
+const dateFrom = document.getElementById("dateFrom");
+const dateTo = document.getElementById("dateTo");
+const free = document.getElementById("free");
+const confLocation = document.getElementById("ElementLocation");
+const prezCountSlider = document.getElementById("prezCountSlider");
+var actualFilter = {};
+var actualConfPages;
+var NumOfPages = 0;
 
+// metoda inicializuje filter
+function InitFilter()
+{
+  console.log("init filter start");
+  actualConfPages = {};
 
+  $.ajax({
+    url: baseURL + "/api/guest/getFilterValue",
+    type: 'GET',
+    contentType: 'application/json',
+    success: function (response) {
+      InitSlider(response.prezentationCount);
+      console.log("init filter end");
+      SetFilter();
+    },
+    error: function (error) {
+        alert("nelze inicializovat filter");
+    }
+ });
+}
 
+function InitSlider(num)
+{
+  prezCountSlider.innerHTML = '<input  type="range" min="0" max="' + num + '" value="0" class="w-2/3 mt-3" id="range"><p> <span id="num"></span></p>';
+  const slider = document.getElementById("range");
+  const output = document.getElementById("num");
+  output.innerHTML = slider.value;
 
+  slider.oninput = function() 
+  {
+    output.innerHTML = this.value;
+  }
+}
 
+function SetFilter()
+{
+  actualFilter =
+  {
+    "name": elementSearch.value == "" ? null : elementSearch.value,
+    "available": false,
+    "free": free.value == "on" ? false : true,
+    "prezentationCount": Number(document.getElementById("range").value),
+    "from": dateFrom.value == "" ? null : dateFrom.value,
+    "to": dateTo.value == "" ? null : dateTo.value,
+    "adress": confLocation.val == "" ? null : confLocation.value,
+    "page": 1
+  };
+  actualConfPages = {};
+  GetConfFiltred(1);
+}
 
+// metoda načte konference podle filtru
+function GetConfFiltred(page)
+{
+  if(actualConfPages[page] != null) ShowConfPage(page);
 
+  console.log("get page start");
+  var filter = actualFilter;
+  filter.page = page;
+
+  $.ajax({
+    url: baseURL + "/api/guest/getConfList",
+    type: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify(filter),
+    success: function (response) {
+        console.log("conflist success");
+        if(response != null)
+        {
+          actualConfPages[page] = response.conferences;
+          InitCounter(response.pages);
+          ShowConfPage(page);
+        }
+        else 
+        {
+          alert("nelze načíst konference");
+        }
+    },
+    error: function (error) {
+        
+    }
+ });
+
+}
+
+// funkce načte stránku
+function ShowConfPage(page)
+{
+  if(NumOfPages < page) return;
+
+  var container = document.getElementById("ConfStack");
+  container.innerHTML = "";
+  var counter = 0;
+  var page = actualConfPages[page];
+
+  for(i = 0; i < Object.keys(page).length; i++)
+  {
+    item = page[i];
+    var id = "B"+counter;
+    counter++;
+    container.innerHTML += 
+    `
+    <button type="button" onclick="javascript:popupMymodal()">
+    <div class="flex flex-col justify-between overflow-auto text-justify  transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <p class="mb-2 font-bold">` + item.nazev + `</p>
+        <p class="text-sm leading-5 text-gray-900">Popis:` + item.popis + `</p>
+        <p class="text-sm leading-5 text-gray-900">Tema:` + item.tema + `</p>
+        <p class="text-sm leading-5 text-gray-900">Adresa:` + item.adresa + `</p>
+        <p class="text-sm leading-5 text-gray-900">vstupne:` + item.vstupne + `</p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </button>
+  `
+  };
+}
+
+function popupMymodal()
+{
+  document.getElementById('myModal').style.display = 'block';
+  popup ();
+}
 
 // -------------------------------------------------- Slider Counter ------------------------------------------------------
-// = in index.html (due to connection issues)
 
+function InitCounter(pages)
+{
+  NumOfPages = pages;
+  var container = document.getElementById("PageNumCounter");
+  container.innerHTML = "";
 
-
-
+  for(i = 1; i <= NumOfPages; i++)
+  {
+    container.innerHTML +=
+    `
+    <button onclick="javascript:GetConfFiltred(`+i+`)" type="button" class="text-purple-500 bg-transparent border border-solid border-purple-500 hover:bg-purple-500 hover:text-white active:bg-purple-600 font-bold uppercase text-xs px-4 py-2 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150">` + i +`</button>
+    `;
+  }
+}
 
 
 // --------------------------------------------- Conference Modal Boxes (= popup window) -----------------------------------------------
